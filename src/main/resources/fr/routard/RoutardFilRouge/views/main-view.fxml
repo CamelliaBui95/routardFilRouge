@@ -155,11 +155,11 @@
                                           </AnchorPane>
                                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                                              <children>
-                                                <TableView prefHeight="292.0" prefWidth="287.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                <TableView fx:id="subdivisionTableView" prefHeight="292.0" prefWidth="287.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                    <columns>
-                                                      <TableColumn fx:id="idSubdivision" prefWidth="30.0" text="ID" />
-                                                      <TableColumn fx:id="subdivisionName" prefWidth="216.0" text="Subdivision Name" />
-                                                      <TableColumn fx:id="codeSubdivision" prefWidth="43.0" text="Code" />
+                                                      <TableColumn fx:id="idSubdivisionCol" prefWidth="30.0" text="ID" />
+                                                      <TableColumn fx:id="subdivisionNameCol" prefWidth="216.0" text="Subdivision Name" />
+                                                      <TableColumn fx:id="subdivisionCodeCol" prefWidth="43.0" text="Code" />
                                                    </columns>
                                                 </TableView>
                                              </children>

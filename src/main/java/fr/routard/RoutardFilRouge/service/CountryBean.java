@@ -19,6 +19,11 @@ public class CountryBean {
         sortedCountries = new SortedList<>(filteredCountries);
     }
 
+    public void filterCountry(String searchStr) {
+        String finalSearchStr = searchStr.toLowerCase();
+        filteredCountries.setPredicate(country -> country.getName().toLowerCase().contains(finalSearchStr));
+    }
+
     public SortedList<Country> getSortedCountries() {
         return sortedCountries;
     }

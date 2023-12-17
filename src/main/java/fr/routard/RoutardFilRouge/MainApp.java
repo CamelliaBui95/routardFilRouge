@@ -2,6 +2,7 @@ package fr.routard.RoutardFilRouge;
 
 import fr.routard.RoutardFilRouge.controllers.MainViewController;
 import fr.routard.RoutardFilRouge.service.CountryBean;
+import fr.routard.RoutardFilRouge.service.SubdivisionBean;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -14,9 +15,11 @@ import java.io.IOException;
 public class MainApp extends Application {
     private Stage primaryStage;
     private CountryBean countryBean;
+    private SubdivisionBean subdivisionBean;
 
     public MainApp() {
         this.countryBean = new CountryBean();
+        this.subdivisionBean = new SubdivisionBean();
     }
 
     @Override
@@ -35,6 +38,7 @@ public class MainApp extends Application {
             BorderPane pane = (BorderPane) fxmlLoader.load();
             MainViewController controller = fxmlLoader.getController();
             controller.setCountryBean(countryBean);
+            controller.setSubdivisionBean(subdivisionBean);
             controller.setMainApp(this);
 
             Scene scene = new Scene(pane);

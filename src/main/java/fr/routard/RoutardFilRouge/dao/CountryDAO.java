@@ -12,8 +12,7 @@ public class CountryDAO extends DAO<Country, Country> {
     public ArrayList<Country> getAll() {
         ArrayList<Country> countries = new ArrayList<>();
         String req = "{call ps_searchCountry}";
-        try {
-            CallableStatement stm = connection.prepareCall(req);
+        try(CallableStatement stm = connection.prepareCall(req)) {
             ResultSet rs = stm.executeQuery();
             while(rs.next()) {
                 String continentCode = rs.getString("CODE_CONTINENT");
@@ -25,6 +24,7 @@ public class CountryDAO extends DAO<Country, Country> {
                 Country country = new Country(countryCode,countryName,continent);
                 countries.add(country);
             }
+            rs.close();
         } catch(Exception e) {
             e.printStackTrace();
         }
